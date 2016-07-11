@@ -10,6 +10,25 @@ import Foundation
 
 public class PaymentFont {
     
+    private static var preloaded: Bool = {
+            
+        let bundle = Bundle(for: PaymentFont.self)
+        
+        guard let URL = bundle.urlForResource(PaymentFont.fontName, withExtension: "ttf"),
+              let data = try? Data(contentsOf: URL) else {
+                
+            return false
+        }
+            
+        guard let provider = CGDataProvider(data: data) else {
+            return false
+        }
+        
+        let font = CGFont(provider)
+        return CTFontManagerRegisterGraphicsFont(font, nil)
+            
+    }()
+    
     public static let fontName = "paymentfont-webfont"
     
     public enum Symbols: String {
@@ -114,43 +133,22 @@ public class PaymentFont {
         
     }
 
-    static var once: dispatch_once_t = 0
-    public static func preloadFont() -> Bool {
+    public static func preloadFont() {
         
-        guard UIFont.fontNamesForFamilyName(PaymentFont.fontName).count == 0 else { return true }
-        
-        var result = true
-        dispatch_once(&PaymentFont.once) {
-            
-            let bundle = NSBundle(forClass: PaymentFont.self)
-            
-            guard let URL = bundle.URLForResource(PaymentFont.fontName, withExtension: "ttf"),
-                  let data = NSData(contentsOfURL: URL) else {
-                    
-                result = false
-                return
-            }
-            
-            let provider = CGDataProviderCreateWithCFData(data)
-            guard let font = CGFontCreateWithDataProvider(provider) else {
-                result = false
-                return
-            }
-            
-            result = CTFontManagerRegisterGraphicsFont(font, nil)
-            
+        guard UIFont.fontNames(forFamilyName: PaymentFont.fontName).count == 0 else { return }
+        guard PaymentFont.preloaded else {
+            print("Payment font was not loaded.")
+            return
         }
-        
-        return result
-        
+
     }
     
-    public static func font(size size: CGFloat) -> UIFont? {
+    public static func font(size: CGFloat) -> UIFont? {
         PaymentFont.preloadFont()
         return UIFont(name: PaymentFont.fontName, size: size)
     }
     
-    public static func icon(icon: Symbols) -> String? {
+    public static func icon(_ icon: Symbols) -> String? {
         return icon.stringValue
     }
         

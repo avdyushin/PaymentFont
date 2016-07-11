@@ -112,11 +112,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Grigory Avdyushin";
 				TargetAttributes = {
 					4B4AC6881D33A8C70048A0D6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Q4HEW2JVA9;
+						DevelopmentTeamName = "GRIGORY AVDYUSHIN";
 					};
 				};
 			};
@@ -286,6 +288,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.avdyushin.PaymentFontExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
