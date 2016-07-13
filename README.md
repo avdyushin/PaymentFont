@@ -9,3 +9,8 @@ Usage:
 
 	PaymentFont.font(size: 32)    // Returns UIFont with size
 	PaymentFont.icon(.creditCard) // Returns icon text
+
+Carthage:
+
+	$ echo "github \"avdyushin/PaymentFont\"" > Cartfile
+	$ carthage update
