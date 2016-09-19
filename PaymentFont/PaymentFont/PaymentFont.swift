@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class PaymentFont {
+open class PaymentFont {
     
-    private static var preloaded: Bool = {
+    fileprivate static var preloaded: Bool = {
             
         let bundle = Bundle(for: PaymentFont.self)
         
-        guard let URL = bundle.urlForResource(PaymentFont.fontName, withExtension: "ttf"),
-              let data = try? Data(contentsOf: URL) else {
+        guard let URL = bundle.url(forResource: PaymentFont.fontName, withExtension: "ttf"),
+              let data = try? Data(contentsOf: URL) as CFData else {
                 
             return false
         }
@@ -29,7 +29,7 @@ public class PaymentFont {
             
     }()
     
-    public static let fontName = "paymentfont-webfont"
+    open static let fontName = "paymentfont-webfont"
     
     public enum Symbols: String {
         
@@ -133,7 +133,7 @@ public class PaymentFont {
         
     }
 
-    public static func preloadFont() {
+    open static func preloadFont() {
         
         guard UIFont.fontNames(forFamilyName: PaymentFont.fontName).count == 0 else { return }
         guard PaymentFont.preloaded else {
@@ -143,12 +143,12 @@ public class PaymentFont {
 
     }
     
-    public static func font(size: CGFloat) -> UIFont? {
+    open static func font(_ size: CGFloat) -> UIFont? {
         PaymentFont.preloadFont()
         return UIFont(name: PaymentFont.fontName, size: size)
     }
     
-    public static func icon(_ icon: Symbols) -> String? {
+    open static func icon(_ icon: Symbols) -> String? {
         return icon.stringValue
     }
         

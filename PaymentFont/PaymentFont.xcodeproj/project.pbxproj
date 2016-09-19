@@ -22,13 +22,6 @@
 			remoteGlobalIDString = 4B4AC6611D3399250048A0D6;
 			remoteInfo = PaymentFont;
 		};
-		4B4AC6A21D33A8F80048A0D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4B4AC69E1D33A8F80048A0D6 /* PaymentFontExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4B4AC6891D33A8C70048A0D6;
-			remoteInfo = PaymentFontExample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +33,6 @@
 		4B4AC6731D3399260048A0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B4AC67C1D3399420048A0D6 /* PaymentFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentFont.swift; sourceTree = "<group>"; };
 		4B4AC67E1D33995A0048A0D6 /* paymentfont-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "paymentfont-webfont.ttf"; sourceTree = "<group>"; };
-		4B4AC69E1D33A8F80048A0D6 /* PaymentFontExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PaymentFontExample.xcodeproj; path = ../PaymentFontExample/PaymentFontExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +57,6 @@
 		4B4AC6581D3399250048A0D6 = {
 			isa = PBXGroup;
 			children = (
-				4B4AC69E1D33A8F80048A0D6 /* PaymentFontExample.xcodeproj */,
 				4B4AC6641D3399250048A0D6 /* PaymentFont */,
 				4B4AC6701D3399260048A0D6 /* PaymentFontTests */,
 				4B4AC6631D3399250048A0D6 /* Products */,
@@ -99,14 +90,6 @@
 				4B4AC6731D3399260048A0D6 /* Info.plist */,
 			);
 			path = PaymentFontTests;
-			sourceTree = "<group>";
-		};
-		4B4AC69F1D33A8F80048A0D6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4B4AC6A31D33A8F80048A0D6 /* PaymentFontExample.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,12 +176,6 @@
 			mainGroup = 4B4AC6581D3399250048A0D6;
 			productRefGroup = 4B4AC6631D3399250048A0D6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4B4AC69F1D33A8F80048A0D6 /* Products */;
-					ProjectRef = 4B4AC69E1D33A8F80048A0D6 /* PaymentFontExample.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4B4AC6611D3399250048A0D6 /* PaymentFont */,
@@ -206,16 +183,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4B4AC6A31D33A8F80048A0D6 /* PaymentFontExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = PaymentFontExample.app;
-			remoteRef = 4B4AC6A21D33A8F80048A0D6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4B4AC6601D3399250048A0D6 /* Resources */ = {

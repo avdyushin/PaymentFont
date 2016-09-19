@@ -13,7 +13,7 @@ class IconCell: UITableViewCell {
     
     @IBOutlet weak var iconLabel: UILabel! {
         didSet {
-            iconLabel.font = PaymentFont.font(size: 32)
+            iconLabel.font = PaymentFont.font(32)
         }
     }
     
